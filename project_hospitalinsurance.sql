@@ -1,0 +1,56 @@
+-- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: project
+-- ------------------------------------------------------
+-- Server version	8.0.32
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `hospitalinsurance`
+--
+
+DROP TABLE IF EXISTS `hospitalinsurance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `hospitalinsurance` (
+  `Insurance_ID` int NOT NULL,
+  `Start_Date` date NOT NULL,
+  `End_Date` date NOT NULL,
+  `Company_Name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `CoInsurance` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `primaryid` int NOT NULL,
+  PRIMARY KEY (`primaryid`),
+  CONSTRAINT `hospitalinsurance_ibfk_1` FOREIGN KEY (`primaryid`) REFERENCES `hospitalpatient` (`primaryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hospitalinsurance`
+--
+
+LOCK TABLES `hospitalinsurance` WRITE;
+/*!40000 ALTER TABLE `hospitalinsurance` DISABLE KEYS */;
+INSERT INTO `hospitalinsurance` VALUES (34423,'2016-02-15','2023-11-28','UnitedHealth','20',100115733),(78187,'2017-01-06','2023-11-08','Anthem Inc','40',100234223),(86132,'2017-03-04','2023-08-21','Centene Corp','15',100260594),(38814,'2016-09-25','2023-07-13','Humana','25',100518358),(67841,'2016-05-15','2023-08-09','CVS','30',100614443),(51255,'2016-06-03','2023-05-16','HCSC','40',100746869),(88329,'2016-02-11','2023-05-29','CVS','50',100832487),(60665,'2016-11-23','2023-08-05','LewerMark','60',100900002),(12535,'2016-09-03','2023-05-12','Humana','40',101397357),(88606,'2016-05-10','2023-06-25','Kaiser Foundation','10',101530275),(55177,'2016-08-25','2023-12-07','Centene Corp','25',101834686),(45968,'2016-06-26','2023-07-21','Kaiser Foundation','30',1002130537),(95916,'2016-07-08','2023-08-02','HCSC','35',1006401873),(97328,'2017-03-08','2023-10-12','LewerMark','30',1009456310),(35743,'2017-02-17','2023-07-02','Centene Corp','50',1014222242),(86521,'2016-12-30','2023-09-03','Anthem Inc','60',1015212328),(30200,'2016-10-17','2023-09-30','UnitedHealth','25',1015648243),(44832,'2016-03-21','2023-07-24','Anthem Inc','20',1016133054),(94930,'2016-09-28','2023-07-24','Centene Corp','30',1017572229),(79431,'2016-10-02','2023-05-11','Humana','45',1020049437);
+/*!40000 ALTER TABLE `hospitalinsurance` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-03-26 20:22:41
